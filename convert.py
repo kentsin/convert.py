@@ -2,6 +2,8 @@ import os			    # for magick and tesseract commands
 #mport time			  # for epoch time
 #import calendar 	# for epoch time
 #from PyPDF2 import PdfFileMerger
+import cv2
+import pytesseract
 
 dir_files = [f for f in os.listdir(".") if os.path.isfile(os.path.join(".", f))]
 #epoch_time = int(calendar.timegm(time.gmtime()))
