@@ -3,6 +3,9 @@ import time			  # for epoch time
 import calendar 	# for epoch time
 from PyPDF2 import PdfFileMerger
 
+import cv2
+import pytesseract
+
 dir_files = [f for f in os.listdir(".") if os.path.isfile(os.path.join(".", f))]
 epoch_time = int(calendar.timegm(time.gmtime()))
 print(dir_files)
@@ -27,6 +30,7 @@ for file in dir_files: # look at every file in the current directory
 			if pic.endswith('.png'):
 				combined_pic = folder + '/' + pic
 				print(combined_pic)
+				img = cv2.imred(combined_pic)
 				tesseract = 'tesseract "' + combined_pic + '" "' + combined_pic + '-ocr" PDF'
 				print(tesseract)
 				os.system(tesseract)
