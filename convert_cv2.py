@@ -6,12 +6,12 @@ import numpy as np
 import pdf2image
 import cv2
 
-def convert_pdf_to_image(doc, dpi):
+def convert_pdf_to_image(document, dpi):
     images = []
     images.extend(
         list(
             map(
-                lambda image: cv2.cvtColor(np.asarray(image), code=cv2.COLOR_RGB2BGR), pdf2image.convert_from_path(doc, dpi=dpi),
+                lambda image: cv2.cvtColor(np.asarray(image), code=cv2.COLOR_RGB2BGR), pdf2image.convert_from_path(document, dpi=dpi),
             )
         )
     )
