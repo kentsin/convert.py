@@ -6,6 +6,8 @@ import numpy as np
 import pdf2image
 import cv2
 
+import matplotlib.pyplot as plt
+
 def convert_pdf_to_image(document, dpi):
     images = []
     images.extend(
